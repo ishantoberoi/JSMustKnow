@@ -26,6 +26,13 @@ Array.prototype.mergeAll = function(){
 	return result;
 }
 
+Array.prototype.flatMap = function(testFunction){
+	return this.
+		map(function(item){
+			return testFunction(item);
+		}).mergeAll();
+}
+
 Array.prototype.reduce = function(testFunction,initialValue){
 	var counter,accumulatedValue,result = [];
 	if(this.length === 0){
