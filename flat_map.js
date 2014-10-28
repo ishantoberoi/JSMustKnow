@@ -128,7 +128,6 @@ Array.prototype.flatmap = function(testFunction){
 	return this.
 		map(function(item){
 			return testFunction(item);
-
 	})
 	.mergeAll();
 }
@@ -141,9 +140,3 @@ var a = [0,1,2];
 a.flatmap(function(x){
 	return spanishFrenchEnglishWords[x];
 })
-
-
-
-
-
-

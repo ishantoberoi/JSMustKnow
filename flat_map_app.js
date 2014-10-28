@@ -27,7 +27,7 @@ Array.prototype.filter = function(testFunction){
 }
 
 Array.prototype.flatmap = function(testFunction){
-	this.map(function(item){
+	return this.map(function(item){
 		return testFunction(item);
 	})
 	.mergeAll();
@@ -94,9 +94,9 @@ var movieLists = [
 		];
 	
 		return movieLists.
-			map(function(movieList){
+			flatmap(function(movieList){
 				return movieList.videos.
-					map(function(video){
+					flatmap(function(video){
 						return video.boxarts.
 							filter(function(boxart){
 								return boxart.width === 150;
@@ -107,12 +107,3 @@ var movieLists = [
 					})
 			})
 }());
-
-
-
-
-
-
-
-
-
