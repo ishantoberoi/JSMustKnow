@@ -56,8 +56,9 @@ Array.prototype.reduce = function(testFunction,initialValue){
 
 Array.zip = function(left,right,combinerFun){
 	var counter,result = [];
-	for(counter = 0; counter<Math.min(left.length,right.length), counter++){
+	for(counter = 0; counter<Math.min(left.length,right.length); counter++){
 		result.push(combinerFun(left[counter],right[counter]));
 	}
 	return result;
 }
+
