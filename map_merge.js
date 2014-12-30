@@ -64,3 +64,20 @@ Array.prototype.filter = function(testFunction){
 		
 }());
 
+
+Array.prototype.mergeAll = function(){
+	var result = [];
+	this.forEach(function(subArray){
+		subArray.forEach(function(item){
+			result.push(item);
+		})
+	})
+	return result;
+}
+
+
+var a = [[1,2],[3,4]];
+
+a.mergeAll();
+
+
